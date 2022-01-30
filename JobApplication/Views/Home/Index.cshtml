@@ -5,9 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    <style>
+        hr.solid {
+            border-top: 3px solid #bbb;
+        }
+    </style>
     <link rel="stylesheet" href="~/css/jobapplication.css">
 
-    
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
@@ -41,19 +46,23 @@
             <div class="stepwizard-row setup-panel">
                 <div class="stepwizard-step col-xs-3">
                     <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
-                    <p><small>Shipper</small></p>
+                    <p><small>Basic Details</small></p>
                 </div>
-                <div class="stepwizard-step col-xs-3">
+                <div class="stepwizard-step col-xs-2">
                     <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                    <p><small>Destination</small></p>
+                    <p><small>Education Details</small></p>
                 </div>
-                <div class="stepwizard-step col-xs-3">
+                <div class="stepwizard-step col-xs-2">
                     <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                    <p><small>Schedule</small></p>
+                    <p><small>Work Experiance</small></p>
+                </div>
+                <div class="stepwizard-step col-xs-2">
+                    <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+                    <p><small>Language and Technology</small></p>
                 </div>
                 <div class="stepwizard-step col-xs-3">
-                    <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
-                    <p><small>Cargo</small></p>
+                    <a href="#step-5" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+                    <p><small>Refrel and Prefrences</small></p>
                 </div>
             </div>
         </div>
@@ -61,37 +70,49 @@
         <form role="form">
             <div class="panel panel-primary setup-content" id="step-1">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Shipper</h3>
+                    <h3 class="panel-title">Basic Details</h3>
                 </div>
                 <div class="panel-body">
 
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputEmail4">First Name</label>
-                            <input type="email" required="required" class="form-control" id="inputEmail4" placeholder="Enter First Name">
+                            <input type="text" class="form-control" id="inputEmail4" placeholder="Enter First Name" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputPassword4">Last Name</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Enter Last Name">
+                            <input type="text" class="form-control" id="inputPassword4" placeholder="Enter Last Name" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputPassword4">Designation</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Enter Designation">
+                            <input type="text" class="form-control" id="inputPassword4" placeholder="Enter Designation" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputEmail4">Gender</label>
-                            <input type="email" required="required" class="form-control" id="inputEmail4" placeholder="Enter First Name">
+
+                            <select id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+
+                            </select>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputPassword4">Relationship status</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Enter Last Name">
+                            <select id="inputState" class="form-control">
+                                <option selected>Choose...</option>
+                                <option value="Male">Married</option>
+                                <option value="Female">Single</option>
+
+                            </select>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputPassword4">Birth date</label>
                             <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" />
+
+                                <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" required />
                                 <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                 </div>
@@ -101,40 +122,75 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Email</label>
-                            <input type="email" required="required" class="form-control" id="inputEmail4" placeholder="Enter Email">
+                            <input type="text" required class="form-control" id="inputEmail4" placeholder="Enter Email">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Phonenumber</label>
-                            <input type="tel" class="form-control" id="inputPassword4" placeholder="Enter Phonenumber">
+                            <input type="text" maxlength="10" pattern=".{10}" class="form-control" id="validationCustom08" placeholder="Mobile" required>
                         </div>
 
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Address 1</label>
-                            <input type="email" required="required" class="form-control" id="inputEmail4" placeholder="Enter Address line 1">
+                            <input type="text" class="form-control" id="inputEmail4" placeholder="Enter Address line 1" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Address 2</label>
-                            <input type="tel" class="form-control" id="inputPassword4" placeholder="Enter Address line 2">
+                            <input type="text" class="form-control" id="inputPassword4" placeholder="Enter Address line 2">
                         </div>
 
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputCity">City</label>
-                            <input type="text" class="form-control" id="inputCity">
+                            <input type="text" class="form-control" id="inputCity" required>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputState">State</label>
-                            <select id="inputState" class="form-control">
+                            <select id="inputState" class="form-control" required>
                                 <option selected>Choose...</option>
-                                <option>...</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                <option value="Daman and Diu">Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+                                <option value="Puducherry">Puducherry</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
                             </select>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputZip">Zip</label>
-                            <input type="text" class="form-control" id="inputZip">
+                            <input type="text" class="form-control" id="inputZip" required>
                         </div>
                     </div>
 
@@ -145,38 +201,205 @@
 
             <div class="panel panel-primary setup-content" id="step-2">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Destination</h3>
+                    <h3 class="panel-title">Education Details</h3>
                 </div>
                 <div class="panel-body">
-                    <div class="form-group">
-                        <label class="control-label">Company Name</label>
-                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
+                    <h3 class="panel-title"><b>SSC result</b></h3>
+                    <br />
+                    <div class="form-row">
+
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">Name Of Board</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Enter Board name" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputPassword4">Passing Year</label>
+                            <input type="text" class="form-control" pattern="\d*" maxlength="4" placeholder="Enter passing year" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputPassword4">Percentage</label>
+                            <input type="text" class="form-control" pattern="\d*" maxlength="5" placeholder="Enter passing year" required>
+                        </div>
+
                     </div>
-                    <div class="form-group">
-                        <label class="control-label">Company Address</label>
-                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address" />
+                    <hr class="solid">
+                    <h3 class="panel-title"><b>HSC result</b></h3>
+                    <br />
+                    <div class="form-row">
+
+                        <div class="form-group col-md-4">
+                            <label for="inputEmail4">Name Of Board</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Enter Board name" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputPassword4">Passing Year</label>
+                            <input type="text" class="form-control" pattern="\d*" maxlength="4" placeholder="Enter passing year" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputPassword4">Percentage</label>
+                            <input type="text" class="form-control" pattern="\d*" maxlength="5" placeholder="Enter passing year" required>
+                        </div>
+
                     </div>
+                    <hr class="solid">
+                    <h3 class="panel-title"><b>Bacheolr Degree</b></h3>
+                    <br />
+                    <div class="form-row">
+
+                        <div class="form-group col-md-3">
+                            <label for="inputEmail4">Cource Name</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Enter cource name" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputPassword4">University</label>
+                            <input type="text" class="form-control" pattern="\d*" maxlength="4" placeholder="Enter University" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputPassword4">Passing year</label>
+                            <input type="text" class="form-control" pattern="\d*" maxlength="5" placeholder="Enter passing year" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputPassword4">Percentage</label>
+                            <input type="text" class="form-control" pattern="\d*" maxlength="5" placeholder="Enter percentage" required>
+                        </div>
+
+                    </div>
+                    <hr class="solid">
+                    <h3 class="panel-title"><b>Master degree</b></h3>
+                    <br />
+                    <div class="form-row">
+
+                        <div class="form-group col-md-3">
+                            <label for="inputEmail4">Cource Name</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Enter cource name" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputPassword4">University</label>
+                            <input type="text" class="form-control" placeholder="Enter University" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputPassword4">Passing year</label>
+                            <input type="text" class="form-control" pattern="\d*" maxlength="5" placeholder="Enter passing year" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputPassword4">Percentage</label>
+                            <input type="text" class="form-control" pattern="\d*" maxlength="5" placeholder="Enter percentage" required>
+                        </div>
+
+                    </div>
+
                     <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
                 </div>
             </div>
 
             <div class="panel panel-primary setup-content" id="step-3">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Schedule</h3>
+                    <h3 class="panel-title">Work Experiance</h3>
                 </div>
                 <div class="panel-body">
-                    <div class="form-group">
-                        <label class="control-label">Company Name</label>
-                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
+
+                    <div class="form-row clonediv">
+
+                        <div class="form-group col-md-3">
+                            <label for="inputEmail4">Company name</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Enter cource name" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputPassword4">Designation</label>
+                            <input type="text" class="form-control" placeholder="Enter University" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputPassword4">Start date</label>
+                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+
+                                <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" required />
+                                <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inputPassword4">end date</label>
+                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+
+                                <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" required />
+                                <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="form-group">
-                        <label class="control-label">Company Address</label>
-                        <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address" />
-                    </div>
+                    <button class="btn btn-primary nextBtn" id="but_add" type="button">Add new</button>
                     <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
                 </div>
             </div>
 
+            <div class="panel panel-primary setup-content" id="step-4">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Language and Technology</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-row">
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" name="languagehindi" id="hindi" value="1" tabIndex="1" onClick="ckChange(this)">
+                            <label class="form-check-label" for="inlineCheckbox1">Hindi</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                           <input type="checkbox" name="languagehindi" id="hindi" value="1" tabIndex="1" onClick="ckChange(this)" disabled>
+                            <label class="form-check-label" for="inlineCheckbox1">read</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                           <input type="checkbox" name="languagehindi" id="hindi" value="1" tabIndex="1" onClick="ckChange(this)" disabled>
+                            <label class="form-check-label" for="inlineCheckbox2">write</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" name="languagehindi" id="hindi" value="1" tabIndex="1" onClick="ckChange(this)" disabled>
+                            <label class="form-check-label" for="inlineCheckbox3">speak</label>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" name="languageeng" id="hindi" value="1" tabIndex="1" onClick="ckChange(this)">
+                            <label class="form-check-label" for="inlineCheckbox1">English</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                           <input type="checkbox" name="languageeng" id="hindi" value="1" tabIndex="1" onClick="ckChange(this)" disabled>
+                            <label class="form-check-label" for="inlineCheckbox1">read</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                           <input type="checkbox" name="languageeng" id="hindi" value="1" tabIndex="1" onClick="ckChange(this)" disabled>
+                            <label class="form-check-label" for="inlineCheckbox2">write</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" name="languageeng" id="hindi" value="1" tabIndex="1" onClick="ckChange(this)" disabled>
+                            <label class="form-check-label" for="inlineCheckbox3">speak</label>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" name="languageguj" id="hindi" value="1" tabIndex="1" onClick="ckChange(this)">
+                            <label class="form-check-label" for="inlineCheckbox1">Gujarati</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                           <input type="checkbox" name="languageguj" id="hindi" value="1" tabIndex="1" onClick="ckChange(this)" disabled>
+                            <label class="form-check-label" for="inlineCheckbox1">read</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                           <input type="checkbox" name="languageguj" id="hindi" value="1" tabIndex="1" onClick="ckChange(this)" disabled>
+                            <label class="form-check-label" for="inlineCheckbox2">write</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" name="languageguj" id="hindi" value="1" tabIndex="1" onClick="ckChange(this)" disabled>
+                            <label class="form-check-label" for="inlineCheckbox3">speak</label>
+                        </div>
+
+                    </div>
+                    <button class="btn btn-success pull-right" type="button">Next</button>
+                </div>
+            </div>
             <div class="panel panel-primary setup-content" id="step-4">
                 <div class="panel-heading">
                     <h3 class="panel-title">Cargo</h3>
@@ -228,6 +451,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="~/js/demo.js"></script>
     <script>
+
         $(function () {
             //Initialize Select2 Elements
             $('.select2').select2()
@@ -361,7 +585,36 @@
         }
           // DropzoneJS Demo Code End
     </script>
+    <script>
+                $(document).ready(function(){
 
+         $('#but_add').click(function(){
+
+          // Create clone of <div class='input-form'>
+          var newel = $('.clonediv:last').clone();
+
+          // Add after last <div class='input-form'>
+          $(newel).insertAfter(".clonediv:last");
+         });
+
+         $('.txt').focus(function(){
+          $(this).css('border-color','red');
+         });
+
+         $('.txt').focusout(function(){
+          $(this).css('border-color','initial');
+         });
+
+        });
+    </script>
+    <script>
+        function ckChange(el) {
+  var ckName = document.getElementsByName(el.name);
+  for (var i = 0, c; c = ckName[i]; i++) {
+   c.enabled = !(!el.checked || c === el);
+  }
+}
+    </script>
 </body>
 
 </html>
